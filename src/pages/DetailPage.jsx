@@ -37,7 +37,6 @@ const DetailPage = ({}) => {
                 </div>
             </div>
             <div className="container mx-auto pt-6 px-6">
-
                 <div className="flex flex-row gap-6 mt-12 flex-wrap md:flex-nowrap">
                     <img alt={recipe.name} src={recipe.image}
                          className="max-h-[600px] w-full md:w-1/2 h-auto object-cover"/>
