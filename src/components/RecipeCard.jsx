@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 import TextTruncate from 'react-text-truncate';
 
 const RecipeCard = ({recipe}) => (
-    <div className="bg-white border border-gray-200 rounded-lg shadow relative">
+    <div className="bg-white border border-gray-200 rounded-lg shadow relative transition-all duration-500 hover:-translate-y-1">
         <img className="rounded-t-lg h-96 w-full object-cover" src={recipe.image} alt=""/>
         <span
             className="bg-gray-700 text-white text-xl right-2 absolute top-4
@@ -11,11 +11,11 @@ const RecipeCard = ({recipe}) => (
             {recipe.cuisine}
         </span>
         <div className="p-5">
-            <a href="#">
+            <Link to={"/"+recipe.id}>
                 <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">
                     {recipe.name}
                 </h5>
-            </a>
+            </Link>
             <p className="mb-3 font-normal text-gray-700 mt-6">
                 <TextTruncate
                     line={3}
