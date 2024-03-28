@@ -47,9 +47,10 @@ const HomePage = () => {
                 <RecipesBoxSearch onSearch={filterRecipes}/>
             </div>
             <div className="container px-4 mx-auto py-12 grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {recipesData.map(recipe => (
+                {recipesData.length > 0 ? recipesData.map(recipe => (
                     <RecipeCard key={recipe.id} recipe={recipe}/>
-                ))}
+                )) : <div class="col-start-2 text-2xl text-center">
+                    <span className="px-auto font-bold">0 results found for your search.</span></div>}
             </div>
         </>
     );
