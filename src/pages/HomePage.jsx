@@ -23,7 +23,6 @@ const HomePage = () => {
         cleaned_job: job,
         cleaned_title: title,
       }),
-      referrerPolicy: "unsafe-url" 
     })
       .then((response) => {
         if (!response.ok) {
