@@ -2,34 +2,6 @@ import { useCallback, useEffect, useState } from "react";
 import recipes from "../data/recipes.jsx";
 
 const HomePage = () => {
-  const [recipesData, setRecipesData] = useState(recipes);
-  const filterRecipes = useCallback(
-    (recipeTitle, categorySelect, cuisineSelect) => {
-      let filteredRecipes = recipes;
-
-      if (recipeTitle && recipeTitle.trim() !== "") {
-        filteredRecipes = filteredRecipes.filter((recipe) =>
-          recipe.name.toLowerCase().includes(recipeTitle.toLowerCase())
-        );
-      }
-
-      if (categorySelect && categorySelect !== "Choose a Category") {
-        filteredRecipes = filteredRecipes.filter(
-          (recipe) => recipe.category === categorySelect
-        );
-      }
-
-      if (cuisineSelect && cuisineSelect !== "Choose a Cuisine") {
-        filteredRecipes = filteredRecipes.filter(
-          (recipe) => recipe.cuisine === cuisineSelect
-        );
-      }
-
-      setRecipesData(filteredRecipes);
-    },
-    [recipes]
-  );
-
   const [company, setCompany] = useState("haas zeitarbeit gmbh");
   const [job, setJob] = useState("versicherungskaufmann frau");
   const [title, setTitle] = useState("versicherungskaufmann schwerpunkt bestandskundenbetreuung m w x");
